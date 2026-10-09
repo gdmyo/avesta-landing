@@ -1,25 +1,39 @@
 export default function Hero() {
   return (
-    <section id="home">
-      <p>Центр розвитку «Avesta»</p>
+    <section className="hero">
+      <div className="hero__overlay" />
 
-      <h1>
-        Астрологія. Консультації.
-        <br />
-        Курси та супровід
-      </h1>
+      <div className="hero__content">
+        <p className="hero__subtitle">
+          Центр розвитку «Avesta»
+        </p>
 
-      <p>
-        Від практикуючого експерта з 15-річним досвідом
-      </p>
+        <p className="hero__author">
+          створений Тетяною Семеновою
+        </p>
 
-      <a href="#consultations">
-        Записатися на консультацію
-      </a>
+        <h1 className="hero__title">
+          АСТРОЛОГІЯ
+          <br />
+          КОНСУЛЬТАЦІЇ
+          <br />
+          КУРСИ • СУПРОВІД • ВИЇЗНІ ТРЕНІНГИ
+        </h1>
 
-      <a href="#courses">
-        Переглянути курси
-      </a>
+        <p className="hero__description">
+          від практикуючого експерта з 15-річним досвідом
+        </p>
+
+        <div className="hero__actions">
+          <a href="#consultations" className="hero__button hero__button--primary">
+            ЗАПИСАТИСЯ
+          </a>
+
+          <a href="#courses" className="hero__button hero__button--secondary">
+            ПЕРЕГЛЯНУТИ КУРСИ
+          </a>
+        </div>
+      </div>
     </section>
   );
 }
