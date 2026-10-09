@@ -388,8 +388,8 @@ textarea {
 }
 
 .service-card__image {
-  width: 100%;
-  aspect-ratio: 4 / 3;
+  width: 320px;
+  height: 320px;
 
   display: flex;
   align-items: center;
@@ -398,8 +398,18 @@ textarea {
   background: #d8ccb2;
   color: #666666;
 
-  border-radius: 40% 40% 45% 45%;
+  border: 6px solid #e8dcc6;
+  border-radius: 50%;
+
   overflow: hidden;
+}
+
+.service-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .service-card__title {
@@ -474,9 +484,11 @@ textarea {
     font-size: 32px;
   }
 
-  .service-card__image {
-    max-width: 500px;
-  }
+ .service-card__image {
+  width: min(280px, 85vw);
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
 }
 /* =========================
    COURSES
