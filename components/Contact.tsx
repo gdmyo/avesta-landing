@@ -31,6 +31,25 @@ export default function Contact() {
       message: formData.get("message"),
     };
 
+try {
+  const response = await fetch("/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    throw new Error("Помилка відправки");
+  }
+
+  setStatus("success");
+  form.reset();
+} catch (error) {
+  console.error(error);
+  setStatus("error");
+}
     console.log(data);
 
     // Пока имитируем отправку.
@@ -168,6 +187,12 @@ export default function Contact() {
                   ? "ВІДПРАВЛЯЄМО..."
                   : "НАДІСЛАТИ"}
               </button>
+              {status === "error" && (
+                <p className="contact__error">
+                 Не вдалося надіслати заявку. Будь ласка,
+                 спробуйте ще раз.
+                </p>
+               )}
 
               <p className="contact__privacy">
                 Натискаючи кнопку, Ви погоджуєтесь
