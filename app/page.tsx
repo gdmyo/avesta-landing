@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
+import ConsultationVideo from "@/components/ConsultationVideo";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Stats from "@/components/Stats";
@@ -19,6 +19,7 @@ export default function Home() {
         <Hero />
         <About />
         <Stats />
+        <ConsultationVideo />
         <Services />
         <Courses />
         <Consultations />

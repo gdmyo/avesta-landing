@@ -4,29 +4,30 @@ export default function Hero() {
       <div className="hero__overlay" />
 
       <div className="hero__content">
-        <p className="hero__subtitle">
-          Центр розвитку «Avesta»
-        </p>
+        <div className="hero__intro">
+     <p className="hero__subtitle">
+    Центр розвитку «Avesta»
+  </p>
 
-        <p className="hero__author">
-          створений Тетяною Семеновою
-        </p>
+  <p className="hero__author">
+    Тетяна Семенова
+  </p>
+</div>
 
-        <h1 className="hero__title">
-          АСТРОЛОГІЯ
-          <br />
-          КОНСУЛЬТАЦІЇ
-          <br />
-          КУРСИ • СУПРОВІД • ВИЇЗНІ ТРЕНІНГИ
-        </h1>
+<h1 className="hero__title">
+  <span>АСТРОЛОГІЯ • КОНСУЛЬТАЦІЇ</span>
+  <span>• КУРСИ • СУПРОВІД • ВИЇЗНІ ТРЕНІНГИ</span>
+</h1>
 
-        <p className="hero__description">
-          від практикуючого експерта з 15-річним досвідом
-        </p>
+<p className="hero__experience">
+  досвід консультацій та навчання більше 15 років
+</p>
+        
+
 
         <div className="hero__actions">
           <a href="#consultations" className="hero__button hero__button--primary">
-            ЗАПИСАТИСЯ
+            ЗАПИСАТИСЯ НА КОНСУЛЬТАЦІЮ
           </a>
 
           <a href="#courses" className="hero__button hero__button--secondary">

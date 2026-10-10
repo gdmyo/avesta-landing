@@ -47,6 +47,9 @@ textarea {
   color: white;
   text-align: center;
 }
+.hero__intro {
+  margin-bottom: 32px;
+}
 
 .hero__overlay {
   position: absolute;
@@ -64,17 +67,22 @@ textarea {
 }
 
 .hero__subtitle {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 1.3;
   letter-spacing: 4px;
 }
 
 .hero__author {
-  margin: 0 0 50px;
+  margin: 0;
 
-  font-size: 18px;
+  color: #f4e5bd;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  line-height: 1.2;
   font-style: italic;
+  font-weight: 400;
 }
 
 .hero__title {
@@ -193,6 +201,17 @@ textarea {
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
+}
+
+.about__photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 28px;
 }
 
 .about__title {
@@ -323,8 +342,12 @@ textarea {
 
 .services {
   padding: 100px 24px;
-  background: #555555;
+      background: #071a21;
   color: #ffffff;
+}
+
+.services__text {
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .services__container {
@@ -343,7 +366,7 @@ textarea {
   display: block;
   margin-bottom: 16px;
 
-  color: #eadbbd;
+   color: #d9a64a;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 5px;
@@ -352,7 +375,7 @@ textarea {
 .services__title {
   margin: 0;
 
-  color: #f5eddf;
+  color: #f4e5bd;
   font-size: clamp(40px, 5vw, 64px);
   line-height: 1.05;
 }
@@ -415,7 +438,7 @@ textarea {
 .service-card__title {
   margin: 30px 0 0;
 
-  color: #f4e5bd;
+    color: #f4e5bd;
   font-size: 34px;
   line-height: 1.15;
 }
@@ -430,35 +453,39 @@ textarea {
 }
 
 .service-card__button {
+  min-width: 190px;
+  height: 54px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  min-width: 230px;
-  min-height: 58px;
+  padding: 0 28px;
 
-  margin-top: 26px;
-  padding: 14px 30px;
-
-  background: #e6dac1;
+  background: #eee3cc;
   color: #1d5363;
 
-  border: 1px solid #fff3d6;
+  border: 1px solid #eee3cc;
   border-radius: 14px;
 
+  font-size: 14px;
   font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.5px;
+
   text-decoration: none;
 
   transition:
-    transform 0.2s ease,
-    background 0.2s ease;
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .service-card__button:hover {
-  transform: translateY(-3px);
-  background: #f3e8d1;
+  background: #f4e5bd;
+  color: #071a21;
+  transform: translateY(-2px);
 }
-
 
 /* MOBILE */
 
@@ -676,16 +703,8 @@ textarea {
 ========================= */
 
 .consultations {
-  padding: 100px 24px;
-
-  background:
-    linear-gradient(
-      rgba(10, 24, 31, 0.92),
-      rgba(10, 24, 31, 0.92)
-    ),
-    #142a32;
-
-  color: #ffffff;
+  padding: 100px 40px;
+ background: #071a21;
 }
 
 .consultations__container {
@@ -862,12 +881,20 @@ textarea {
 ========================= */
 
 .socials {
-  padding: 90px 24px;
+  padding: 90px 40px;
 
-  background: #555555;
-  color: white;
+  background:
+    linear-gradient(
+      rgba(15, 15, 15, 0.72),
+      rgba(15, 15, 15, 0.82)
+    ),
+    url("/images/socials-bg.jpg");
 
-  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #ffffff;
 }
 
 .socials__container {
@@ -876,27 +903,30 @@ textarea {
 }
 
 .socials__label {
-  color: #d6ad72;
+  margin: 0 0 18px;
 
+  color: #e7c477;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 6px;
 }
 
 .socials__title {
-  margin: 18px 0 0;
+  margin: 0 0 24px;
 
   color: #f4e5bd;
-
-  font-size: clamp(38px, 5vw, 58px);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 52px;
   line-height: 1.1;
+  font-weight: 400;
 }
 
 .socials__text {
-  max-width: 600px;
-  margin: 22px auto 0;
+  margin: 0 0 36px;
 
-  font-size: 18px;
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 17px;
+  line-height: 1.7;
 }
 
 .socials__links {
@@ -908,15 +938,25 @@ textarea {
 }
 
 .socials__link {
-  min-width: 180px;
-  padding: 16px 25px;
+  width: 180px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
 
   border: 1px solid #f4e5bd;
   border-radius: 12px;
 
   color: #f4e5bd;
 
+  font-size: 16px;
   font-weight: 700;
+  line-height: 1;
+
+  text-decoration: none;
 
   transition:
     background 0.2s ease,
@@ -1512,4 +1552,133 @@ html {
   font-size: 14px;
   line-height: 1.5;
   text-align: center;
+}
+/* Consultation Video */
+
+.consultation-video {
+  padding: 90px 40px;
+  background: #eee3cc;
+}
+
+.consultation-video__container {
+  max-width: 1050px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 80px;
+
+  align-items: center;
+}
+
+.consultation-video__content {
+  max-width: 560px;
+}
+
+.consultation-video__label {
+  margin: 0 0 18px;
+
+  color: #1d5363;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.consultation-video__title {
+  margin: 0 0 28px;
+
+  color: #252525;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 52px;
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.consultation-video__text {
+  margin: 0;
+
+  color: #555;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.consultation-video__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+  padding: 0 30px;
+
+  background: #df821d;
+  color: #fff;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.consultation-video__button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.consultation-video__media {
+  width: 360px;
+  height: 460px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background: #222;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.16);
+}
+
+.consultation-video__video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+@media (max-width: 768px) {
+  .consultation-video {
+    padding: 70px 20px;
+  }
+
+  .consultation-video__container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .consultation-video__content {
+    max-width: none;
+  }
+
+  .consultation-video__title {
+    font-size: 40px;
+  }
+
+  .consultation-video__media {
+    width: min(340px, 100%);
+    height: 420px;
+
+    margin: 0 auto;
+
+    border-radius: 24px;
+  }
 }

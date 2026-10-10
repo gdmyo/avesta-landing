@@ -21,16 +21,15 @@ export default function About() {
             до кожної людини.
           </p>
 
-          <a href="#consultations" className="about__button">
-            ЗАПИСАТИСЯ НА КОНСУЛЬТАЦІЮ
-          </a>
         </div>
 
         <div className="about__image">
-          <div className="about__image-placeholder">
-            Фото
-          </div>
-        </div>
+  <img
+    src="/images/about.jpg"
+    alt="Тетяна Семенова"
+    className="about__photo"
+  />
+</div>
       </div>
     </section>
   );

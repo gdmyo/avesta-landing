@@ -22,8 +22,11 @@ export default function Services() {
             <article className="service-card" key={service.id}>
               
               <div className="service-card__image">
-                Фото
-              </div>
+  <img
+    src={service.image}
+    alt={service.title}
+  />
+</div>
 
               <h3 className="service-card__title">
                 {service.title}
