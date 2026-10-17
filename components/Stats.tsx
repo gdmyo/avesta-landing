@@ -54,7 +54,6 @@ export default function Stats() {
   useEffect(() => {
     if (!hasAnimated) return;
 
-    // Длительность всей анимации — 5 секунд
     const duration = 3500;
 
     const startTime = performance.now();
@@ -64,7 +63,6 @@ export default function Stats() {
     const animate = (currentTime: number) => {
       const elapsed = currentTime - startTime;
 
-      // Равномерный прогресс от 0 до 1
       const progress = Math.min(
         elapsed / duration,
         1

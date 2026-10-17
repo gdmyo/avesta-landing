@@ -16,7 +16,9 @@ export default function Contact() {
     "idle" | "loading" | "success" | "error"
   >("idle");
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(
+    event: FormEvent<HTMLFormElement>
+  ) {
     event.preventDefault();
 
     setStatus("loading");
@@ -31,42 +33,33 @@ export default function Contact() {
       message: formData.get("message"),
     };
 
-try {
-  const response = await fetch("/api/contact", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-  if (!response.ok) {
-    throw new Error("Помилка відправки");
-  }
+      if (!response.ok) {
+        throw new Error("Помилка відправки");
+      }
 
-  setStatus("success");
-  form.reset();
-} catch (error) {
-  console.error(error);
-  setStatus("error");
-}
-    console.log(data);
-
-    // Пока имитируем отправку.
-    // На следующем этапе здесь будет запрос к Telegram API.
-    await new Promise((resolve) => setTimeout(resolve, 800));
-
-    setStatus("success");
-    form.reset();
+      setStatus("success");
+      form.reset();
+    } catch (error) {
+      console.error("Contact form error:", error);
+      setStatus("error");
+    }
   }
 
   return (
     <section className="contact" id="contact">
       <div className="contact__container">
-
         <div className="contact__info">
           <span className="contact__label">
-            ЗВ'ЯЗАТИСЯ
+            ЗВ&apos;ЯЗАТИСЯ
           </span>
 
           <h2 className="contact__title">
@@ -88,7 +81,6 @@ try {
         </div>
 
         <div className="contact__form-wrapper">
-
           {status === "success" ? (
             <div className="contact__success">
               <span className="contact__success-icon">
@@ -187,12 +179,13 @@ try {
                   ? "ВІДПРАВЛЯЄМО..."
                   : "НАДІСЛАТИ"}
               </button>
+
               {status === "error" && (
                 <p className="contact__error">
-                 Не вдалося надіслати заявку. Будь ласка,
-                 спробуйте ще раз.
+                  Не вдалося надіслати заявку. Будь ласка,
+                  спробуйте ще раз.
                 </p>
-               )}
+              )}
 
               <p className="contact__privacy">
                 Натискаючи кнопку, Ви погоджуєтесь
@@ -200,7 +193,6 @@ try {
               </p>
             </form>
           )}
-
         </div>
       </div>
     </section>

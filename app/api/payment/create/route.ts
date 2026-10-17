@@ -113,8 +113,6 @@ export async function POST(request: Request) {
       .trim()
       .toLowerCase();
 
-    // Проверяем курс
-
     if (!courseId || !(courseId in courses)) {
       return NextResponse.json(
         {
@@ -125,8 +123,6 @@ export async function POST(request: Request) {
         }
       );
     }
-
-    // Проверяем обязательные контакты
 
     if (!name || !phone || !telegram || !email) {
       return NextResponse.json(
@@ -139,8 +135,6 @@ export async function POST(request: Request) {
         }
       );
     }
-
-    // Telegram должен быть указан как @username
 
     if (
       !telegram.startsWith("@") ||
@@ -157,8 +151,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Проверяем Email
-
     const emailIsValid =
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -173,7 +165,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Ограничиваем длину данных
 
     if (
       name.length > 100 ||
@@ -214,7 +205,6 @@ export async function POST(request: Request) {
     const reference =
       `course-${courseId}-${crypto.randomUUID()}`;
 
-    // Создаём invoice Monobank
 
     const monoResponse = await fetch(
       "https://api.monobank.ua/api/merchant/invoice/create",
@@ -282,7 +272,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Отправляем данные заказа в Telegram
 
     await sendNewOrderToTelegram({
       invoiceId: data.invoiceId,

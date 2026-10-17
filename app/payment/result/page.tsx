@@ -62,8 +62,6 @@ export default function PaymentResultPage() {
           return;
         }
 
-        // Якщо mono ще обробляє платіж,
-        // перевіряємо повторно через 2 секунди.
         if (attempt < 5) {
           timeoutId = setTimeout(() => {
             checkPayment(attempt + 1);

@@ -1,31 +1,27 @@
-import { NextResponse } from "next/server";
+﻿import { NextResponse } from "next/server";
 import crypto from "crypto";
 
 let cachedPublicKey: string | null = null;
 
 const courses = {
   1: {
-    name: "Структура Зодіаку",
+    name: "РЎС‚СЂСѓРєС‚СѓСЂР° Р—РѕРґС–Р°РєСѓ",
     price: 99900,
   },
   2: {
-    name: "Знаки Зодіаку",
+    name: "Р—РЅР°РєРё Р—РѕРґС–Р°РєСѓ",
     price: 99900,
   },
   3: {
-    name: "Планети",
+    name: "РџР»Р°РЅРµС‚Рё",
     price: 132000,
   },
   4: {
-    name: "Кармічний",
+    name: "РљР°СЂРјС–С‡РЅРёР№",
     price: 132000,
   },
 } as const;
 
-/*
-  Получаем публичный ключ Monobank.
-  Он нужен для проверки подписи webhook.
-*/
 async function getMonoPublicKey(
   forceRefresh = false
 ) {
@@ -81,10 +77,6 @@ async function getMonoPublicKey(
   return cachedPublicKey;
 }
 
-/*
-  Проверяем, что webhook действительно
-  пришёл от Monobank.
-*/
 function verifyMonoSignature(
   body: string,
   signature: string,
@@ -105,10 +97,6 @@ function verifyMonoSignature(
   );
 }
 
-/*
-  После webhook дополнительно спрашиваем
-  Monobank о состоянии invoice.
-*/
 async function getInvoiceStatus(
   invoiceId: string
 ) {
@@ -154,10 +142,6 @@ async function getInvoiceStatus(
   return response.json();
 }
 
-/*
-  Отправляем сообщение только
-  после подтверждённой успешной оплаты.
-*/
 async function sendTelegramNotification(
   invoice: any
 ) {
@@ -179,14 +163,7 @@ async function sendTelegramNotification(
   const amountInUah =
     amount / 100;
 
-  /*
-    При создании платежа мы записываем:
 
-    course-3-xxxxxxxx
-
-    Поэтому здесь можем определить,
-    какой именно курс был оплачен.
-  */
   const reference =
     String(invoice.reference || "");
 
@@ -209,12 +186,9 @@ async function sendTelegramNotification(
 
   const courseName =
     course?.name ||
-    "Курс AVESTA";
+    "РљСѓСЂСЃ AVESTA";
 
-  /*
-    Если курс определился,
-    дополнительно проверяем сумму.
-  */
+
   if (
     course &&
     course.price !== amount
@@ -238,12 +212,12 @@ async function sendTelegramNotification(
   }
 
   const message = [
-  "✅ ЗАМОВЛЕННЯ УСПІШНО ОПЛАЧЕНО",
+  "вњ… Р—РђРњРћР’Р›Р•РќРќРЇ РЈРЎРџР†РЁРќРћ РћРџР›РђР§Р•РќРћ",
   "",
-  `Курс: ${courseName}`,
-  `Сума: ${amountInUah} грн`,
+  `РљСѓСЂСЃ: ${courseName}`,
+  `РЎСѓРјР°: ${amountInUah} РіСЂРЅ`,
   "",
-  `Invoice ID: ${invoice.invoiceId || "—"}`,
+  `Invoice ID: ${invoice.invoiceId || "вЂ”"}`,
 ].join("\n");
 
   const response = await fetch(
@@ -282,9 +256,7 @@ export async function POST(
   request: Request
 ) {
   try {
-    /*
-      Берём подпись Monobank.
-    */
+
     const signature =
       request.headers.get("x-sign");
 
@@ -304,10 +276,7 @@ export async function POST(
       );
     }
 
-    /*
-      Для проверки подписи нужен
-      оригинальный body как текст.
-    */
+
     const rawBody =
       await request.text();
 
@@ -321,10 +290,6 @@ export async function POST(
         publicKey
       );
 
-    /*
-      Если ключ изменился,
-      получаем его ещё раз.
-    */
     if (!isValid) {
       publicKey =
         await getMonoPublicKey(true);
@@ -370,10 +335,7 @@ export async function POST(
       }
     );
 
-    /*
-      Telegram отправляем ТОЛЬКО
-      при успешной оплате.
-    */
+
     if (
       webhook.status === "success" &&
       webhook.invoiceId
@@ -383,10 +345,7 @@ export async function POST(
           webhook.invoiceId
         );
 
-      /*
-        Ещё раз проверяем статус
-        непосредственно через Monobank.
-      */
+
       if (
         invoice.status !== "success"
       ) {
@@ -406,9 +365,7 @@ export async function POST(
         );
       }
 
-      /*
-        Проверяем Invoice ID.
-      */
+
       if (
         invoice.invoiceId !==
         webhook.invoiceId

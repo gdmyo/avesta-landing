@@ -1,4 +1,4 @@
-* {
+﻿* {
   box-sizing: border-box;
 }
 
@@ -26,9 +26,7 @@ input,
 textarea {
   font: inherit;
 }
-/* =========================
-   HERO
-========================= */
+
 
 .hero {
   position: relative;
@@ -180,9 +178,6 @@ transition:
     max-width: 320px;
   }
 }
-/* =========================
-   ABOUT
-========================= */
 
 .about {
   padding: 100px 24px;
@@ -294,9 +289,6 @@ transition:
     text-align: center;
   }
 }
-/* =========================
-   STATS
-========================= */
 
 .stats {
   position: relative;
@@ -390,11 +382,11 @@ transition:
 }
 
 .stats__item:nth-child(1)::after {
-  width: 3px; /* первая */
+  width: 3px;
 }
 
 .stats__item:nth-child(2)::after {
-  width: 3px; /* вторая */
+  width: 3px;
 }
 
 .stats__text {
@@ -441,9 +433,6 @@ transition:
     gap: 40px;
   }
 }
-/* =========================
-   SERVICES
-========================= */
 
 .services {
   position: relative;
@@ -483,7 +472,7 @@ transition:
   margin: 0 auto;
 }
 
-/* Заголовок всей секции */
+
 
 .services__heading {
   max-width: 760px;
@@ -520,11 +509,6 @@ transition:
   line-height: 1.6;
 }
 
-
-/* =========================
-   GRID
-========================= */
-
 .services__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -533,11 +517,6 @@ transition:
   row-gap: 90px;
 }
 
-
-/* =========================
-   CARD
-========================= */
-
 .service-card {
   display: flex;
   flex-direction: column;
@@ -545,11 +524,6 @@ transition:
 
   text-align: center;
 }
-
-
-/* =========================
-   PHOTO
-========================= */
 
 .service-card__image {
    --moon: 3%;
@@ -570,7 +544,7 @@ transition:
   overflow: visible;
 }
 
-/* полумесяц */
+
 .service-card__image::before {
   content: "";
 
@@ -592,7 +566,7 @@ transition:
     0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
-/* фото: абсолютный слой, не растягивает блок */
+
 .service-card__image img {
   position: absolute;
   inset: 0;
@@ -607,9 +581,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 
   border-radius: 50%;
 }
-/* =========================
-   TITLE
-========================= */
 
 .service-card__title {
   margin: 34px 0 0;
@@ -622,11 +593,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   font-weight: 600;
 }
 
-
-/* =========================
-   DESCRIPTION
-========================= */
-
 .service-card__description {
   max-width: 470px;
 
@@ -637,11 +603,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   font-size: 17px;
   line-height: 1.65;
 }
-
-
-/* =========================
-   BUTTON
-========================= */
 
 .service-card__button {
   display: inline-flex;
@@ -686,10 +647,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
     0 15px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* =========================
-   MOBILE
-========================= */
-
 @media (max-width: 768px) {
   .services {
     padding: 70px 20px;
@@ -709,10 +666,10 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
     --moon: 4.5%;
     --moon-s: 3.2%;
 
-    /* меньше фото, чтобы дуга слева не обрезалась краем экрана */
+
     width: min(400px, 82vw);
 
-    /* компенсируем выступ дуги слева, чтобы фото вместе с ней стояло по центру */
+
     transform: translateX(3%);
   }
 
@@ -739,9 +696,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
     margin-top: 30px;
   }
 }
-/* =========================
-   COURSES
-========================= */
 
 .courses {
   --course-bg: #eee4d5;
@@ -774,21 +728,11 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   background-repeat: no-repeat;
 }
 
-
-/* =========================
-   CONTAINER
-========================= */
-
 .courses__container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
-
-
-/* =========================
-   SECTION HEADING
-========================= */
 
 .courses__heading {
   max-width: 760px;
@@ -841,11 +785,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   line-height: 1.6;
 }
 
-
-/* =========================
-   GRID
-========================= */
-
 .courses__grid {
   display: grid;
 
@@ -853,11 +792,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 
   gap: 32px;
 }
-
-
-/* =========================
-   CARD
-========================= */
 
 .course-card {
   position: relative;
@@ -893,7 +827,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 }
 
 
-/* маленький декоративный элемент */
+
 
 .course-card::before {
   content: "";
@@ -913,11 +847,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   opacity: 0.85;
 }
 
-
-/* =========================
-   CARD LABEL
-========================= */
-
 .course-card__label {
   margin-top: 10px;
 
@@ -930,11 +859,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 
   letter-spacing: 2px;
 }
-
-
-/* =========================
-   CARD TITLE
-========================= */
 
 .course-card__title {
   margin: 16px 0 0;
@@ -949,11 +873,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   font-weight: 600;
 }
 
-
-/* =========================
-   DESCRIPTION
-========================= */
-
 .course-card__description {
   margin: 22px auto 0;
 
@@ -966,11 +885,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   font-size: 17px;
   line-height: 1.65;
 }
-
-
-/* =========================
-   PRICE
-========================= */
 
 .course-card__price {
   align-self: center;
@@ -992,11 +906,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   box-shadow:
     0 5px 14px rgba(0, 0, 0, 0.08);
 }
-
-
-/* =========================
-   FEATURES
-========================= */
 
 .course-card__features {
   margin: 5px 0 34px;
@@ -1033,11 +942,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   border-radius: 50%;
 }
 
-
-/* =========================
-   ACTIONS
-========================= */
-
 .course-card__actions {
   display: flex;
   flex-direction: column;
@@ -1048,7 +952,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 }
 
 
-/* общая кнопка */
+
 
 .course-card__button {
   display: flex;
@@ -1081,12 +985,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   transform: translateY(-2px);
 }
 
-
-/* =========================
-   SECONDARY BUTTON
-   ПОСТАВИТИ ЗАПИТАННЯ
-========================= */
-
 .course-card__button--secondary {
   background: var(--course-beige);
 
@@ -1103,12 +1001,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 
   border-color: #ffffff;
 }
-
-
-/* =========================
-   PRIMARY BUTTON
-   ПРИДБАТИ
-========================= */
 
 .course-card__button--primary {
   background: var(--course-orange);
@@ -1130,20 +1022,10 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
     0 10px 24px rgba(223, 130, 29, 0.35);
 }
 
-
-/* =========================
-   KEYBOARD FOCUS
-========================= */
-
 .course-card__button:focus-visible {
   outline: 3px solid #ffffff;
   outline-offset: 3px;
 }
-
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 768px) {
   .courses {
@@ -1182,9 +1064,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
     min-height: 60px;
   }
 }
-/* =========================
-   CONSULTATIONS
-========================= */
 
 .consultations {
   position: relative;
@@ -1239,7 +1118,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 }
 
 
-/* CARDS */
+
 
 .consultations__grid {
   display: grid;
@@ -1382,7 +1261,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
     0 12px 25px rgba(223, 130, 29, 0.24);
 }
 
-/* TABLET */
+
 
 @media (max-width: 1000px) {
   .consultations__grid {
@@ -1391,7 +1270,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 }
 
 
-/* MOBILE */
+
 
 @media (max-width: 768px) {
   .consultations {
@@ -1410,10 +1289,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
     font-size: 27px;
   }
 }
-
-/* =========================
-   SOCIALS
-========================= */
 
 .socials {
    position: relative;
@@ -1542,9 +1417,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
     width: 100%;
   }
 }
-/* =========================
-   CONTACT
-========================= */
 
 .contact {
   padding: 110px 24px;
@@ -1565,7 +1437,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 }
 
 
-/* LEFT SIDE */
+
 
 .contact__label {
   display: block;
@@ -1621,7 +1493,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 }
 
 
-/* FORM */
+
 
 .contact__form-wrapper {
   padding: 45px;
@@ -1695,7 +1567,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 }
 
 
-/* SUBMIT */
+
 
 .contact__submit {
   min-height: 60px;
@@ -1740,7 +1612,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 }
 
 
-/* SUCCESS */
+
 
 .contact__success {
   min-height: 420px;
@@ -1805,7 +1677,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 }
 
 
-/* MOBILE */
+
 
 @media (max-width: 768px) {
   .contact {
@@ -1825,9 +1697,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
     margin-top: 30px;
   }
 }
-/* =========================
-   HEADER
-========================= */
 
 .header {
   position: sticky;
@@ -1861,7 +1730,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   gap: 30px;
 }
 
-/* ЛОГОТИП */
+
 
 .header__logo {
   flex-shrink: 0;
@@ -1883,7 +1752,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   opacity: 0.72;
 }
 
-/* НАВИГАЦИЯ */
+
 
 .header__nav {
   display: flex;
@@ -1911,7 +1780,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   transition: color 0.25s ease;
 }
 
-/* ОРАНЖЕВАЯ ЛИНИЯ */
+
 
 .header__nav a::after {
   content: "";
@@ -1928,7 +1797,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   transition: width 0.3s ease;
 }
 
-/* Обычные пункты — линия появляется при наведении */
+
 
 .header__nav a:hover {
   color: #ffffff;
@@ -1938,7 +1807,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   width: 100%;
 }
 
-/* ПРО МЕНЕ — линия видна постоянно */
+
 
 .header__nav .header__about-link {
   color: #ffffff;
@@ -1957,7 +1826,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   height: 3px;
   box-shadow: 0 0 8px rgba(223, 130, 29, 0.45);
 }
-/* КНОПКА ЗАПИСАТИСЯ */
+
 
 .header__button {
   flex-shrink: 0;
@@ -2004,7 +1873,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
     0 12px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* MOBILE */
+
 
 @media (max-width: 900px) {
   .header__container {
@@ -2028,9 +1897,6 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
     font-size: 11px;
   }
 }
-/* =========================
-   FOOTER
-========================= */
 
 .footer {
   padding: 70px 24px 25px;
@@ -2112,7 +1978,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 }
 
 
-/* BOTTOM */
+
 
 .footer__bottom {
   padding-top: 25px;
@@ -2146,7 +2012,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 }
 
 
-/* FOOTER MOBILE */
+
 
 @media (max-width: 768px) {
   .footer {
@@ -2175,7 +2041,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   line-height: 1.5;
   text-align: center;
 }
-/* Consultation Video */
+
 
 .consultation-video {
   padding: 90px 40px;
@@ -2355,7 +2221,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   animation: heroFadeUp 0.9s ease forwards;
   animation-delay: 0.75s;
 }
-/* HERO ANIMATION */
+
 
 .hero__intro {
   opacity: 0;
@@ -2578,7 +2444,7 @@ box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
   text-underline-offset: 4px;
 }
 
-/* PAYMENT MODAL */
+
 
 .payment-modal {
   position: fixed;

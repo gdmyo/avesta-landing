@@ -1,0 +1,14 @@
+app/api/payment/webhook/route.ts:259: trailing whitespace.
+[32m+[m[41m    [m
+app/api/payment/webhook/route.ts:338: trailing whitespace.
+[32m+[m[41m [m
+app/api/payment/webhook/route.ts:368: trailing whitespace.
+[32m+[m[41m    [m
+app/globals.css:385: trailing whitespace.
+[32m+[m[32m  width: 3px;[m[41m [m
+app/globals.css:389: trailing whitespace.
+[32m+[m[32m  width: 3px;[m[41m [m
+app/globals.css:669: trailing whitespace.
+[32m+[m[41m    [m
+app/globals.css:672: trailing whitespace.
+[32m+[m[41m    [m
